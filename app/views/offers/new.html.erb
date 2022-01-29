@@ -1,0 +1,7 @@
+<h1>Make your offer</h1>
+
+<%= simple_form_for [ @pet, @offer ] do |f| %>
+  <%= f.input :starting_date %>
+  <%= f.input :end_date %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
