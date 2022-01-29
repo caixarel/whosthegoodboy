@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="title">
+  <h1>Who's the good boy</h1>
+</div>
+
+<div class="location">
+  <p>Find the cutest pets near you!</p>
+
+  <%= form_for @user do |f| %>
+    <%= f.input :location, placeholder: 'type your location...' %>
+    <%= f.button :submit %>
+  <% end %>
+
+  <%= image_tag 'home.jpeg' %>
+
+</div>
