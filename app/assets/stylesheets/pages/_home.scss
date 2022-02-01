@@ -12,13 +12,12 @@ body {
   color: black;
   width: 100%;
   display: flex;
-  box-shadow: 0 5px 5px #5d686f;
+  box-shadow: 0 5px 5px #d6d6d6;
 }
 
 .logo {
   display: flex;
   justify-content: center;
-
   margin-left: auto;
   margin-right: auto;
   width: 8em
@@ -29,16 +28,17 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
+  text-decoration: none;
 }
-.navbar-nav  {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-    font-size: 1.25rem;
-    line-height: 1;
-    background-color: transparent;
-    display: flex;
-    justify-content: flex-end;
+
+
+
+.login-items  {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
+
 
 #title {
   margin-top: 20%;
@@ -52,6 +52,13 @@ body {
 
   &:hover {
     text-decoration: none;
-    color: darkblue;
+    color: #a5a5a5;
   }
+}
+
+
+
+.home_image {
+  margin: auto;
+  display: block;
 }

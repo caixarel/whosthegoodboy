@@ -1,42 +1,22 @@
-<body>
-  <div class="navbar" style="background-color: #e3f2fd;">
-    <nav class="container-fluid">
-      <div class="logo">
-        <a class="navbar-brand" href="#">Who's the good boy?</a>
-      </div>
-
-      <div class="user-devices">
-      <ul class="navbar-nav d-flex flex-row-reverse">
-        <li class="nav-item active" >
-          <a class="sign-up" href="#">sign up</a>
-        </li>
-        <li class="nav-item active" style="padding-right:30px;">
-          <a class="log-in" href="#">log in</a>
-        </li>
-      </ul>
-      </div>
-    </nav>
-  </div>
 
 
 
-  <div class="container">
-    <div class="row justify-content-center">
+
+<div class="container">
+  <div class="row justify-content-center">
 
 
-        <p id="title">Find the cutest pets near you!</p>
+      <p id="title">Find the cutest pets near you!</p>
 
-            <%# <%= form_for @user do |f| %>
-              <%# <%= f.input :location, placeholder: 'type your location...' %>
-              <%# <%= f.button :submit %>
-            <%# <% end %>
-            <%# <%= form_for :user do |f| %>
-            <%# Location: <%= f.text_field :first_name %>
-            <%# <%= f.submit %>
+          <%# <%= form_for @user do |f| %>
+            <%# <%= f.input :location, placeholder: 'type your location...' %>
+            <%# <%= f.button :submit %>
           <%# <% end %>
-      </div>
+          <%# <%= form_for :user do |f| %>
+          <%# Location: <%= f.text_field :first_name %>
+          <%# <%= f.submit %>
+        <%# <% end %>
     </div>
-    <%= image_tag 'home.jpeg' %>
   </div>
-
-</body>
+  <%= image_tag 'home.jpeg', class: "home_image" %>
+</div>
