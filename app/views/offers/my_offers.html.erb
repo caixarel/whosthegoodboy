@@ -1,0 +1,21 @@
+
+<ul>
+  <%@current_user.offers.each do |offer| %>
+    <li><p>start date: <%= offer.starting_date %></p>
+      <p>end date: <%= offer.end_date %></p>
+      <p>start date: <%= offer.starting_date %></p>
+      <p>Pet: <%= offer.pet.name %></p>
+    </li>
+  <%end %>
+</ul>
+<ul>
+  <%@current_user.pets.each do |pet| %>
+    <%pet.offers.each do |offer| %>
+    <li><p>start date: <%= offer.starting_date %></p>
+      <p>end date: <%= offer.end_date %></p>
+      <p>start date: <%= offer.starting_date %></p>
+      <p>Pet: <%= offer.pet.name %></p>
+    </li>
+  <%end %>
+  <%end %>
+</ul>
