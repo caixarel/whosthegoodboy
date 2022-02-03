@@ -62,6 +62,7 @@ class OffersController < ApplicationController
 
   def find_pet
     @pet = Pet.find(params[:pet_id])
+    authorize @pet
   end
 
   def add_offer_parameters
@@ -74,6 +75,7 @@ class OffersController < ApplicationController
       @offer.pet = @pet
     end
   end
+
   def offer_params
     params.require(:offer).permit(:starting_date, :end_date)
   end
