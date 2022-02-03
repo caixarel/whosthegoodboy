@@ -9,7 +9,6 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
-require 'faker'
 
 ActiveRecord::Schema.define(version: 2022_01_29_150730) do
 
@@ -66,28 +65,4 @@ ActiveRecord::Schema.define(version: 2022_01_29_150730) do
   add_foreign_key "offers", "users"
   add_foreign_key "pets", "users"
   add_foreign_key "reviews", "offers"
-end
-
-puts 'Creating 20 fake dogs.'
-100.times do
-  restaurant = Pet.new(
-    name:    Faker::Creature::Dog.name,
-    address: Faker::Address.city,
-    description: Faker::Creature::Dog.meme_phrase,
-    price_per_hour: rand (5..5000)
-    category: Faker::Creature::Dog.breed
-  )
-  pet.save!
-end
-
-puts 'Creating 20 fake cats.'
-100.times do
-  restaurant = Pet.new(
-    name:    Faker::Creature::Cat.name,
-    address: Faker::Address.city,
-    description: Faker::Creature::Cat.registry,
-    price_per_hour: rand (5..5000),
-    category: Faker::Creature::Cat.breed
-  )
-  pet.save!
 end
