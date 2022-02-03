@@ -24,8 +24,10 @@ class OffersController < ApplicationController
   def update
     @offer = Offer.find(params[:id])
     add_offer_parameters
-    if @offer.update(offer_params)
-      redirect_to pet_offers_path(@pet)
+      if @offer.update(offer_params)
+        redirect_to pet_offers_path(@pet)
+    else
+      render :edit
     end
   end
   def destroy
