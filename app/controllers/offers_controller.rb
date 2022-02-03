@@ -40,8 +40,8 @@ class OffersController < ApplicationController
 
   def accept
     offer = Offer.find(params[:id])
-    offer.accepted = true
-    if offer.update
+    #offer.accepted = true
+    if offer.update(accepted: true)
       redirect_to "/#{current_user.id}/offers_received"
     end
   end
