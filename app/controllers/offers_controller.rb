@@ -15,6 +15,8 @@ class OffersController < ApplicationController
     add_offer_parameters
     if @offer.save
       redirect_to pet_offers_path
+    else
+      render :new
     end
   end
   def edit
@@ -63,12 +65,14 @@ class OffersController < ApplicationController
   end
 
   def add_offer_parameters
-    start_date = Date.parse params[:offer][:starting_date]
-    end_date =Date.parse params[:offer][:end_date]
-    price = (end_date- start_date) * @pet.price_per_hour
-    @offer.total = price.to_i
-    @offer.user = current_user
-    @offer.pet = @pet
+    if !params[:offer][:starting_date].empty? && !params[:offer][:end_date].empty?
+      start_date = Date.parse params[:offer][:starting_date]
+      end_date =Date.parse params[:offer][:end_date]
+      price = (end_date- start_date) * @pet.price_per_hour
+      @offer.total = price.to_i
+      @offer.user = current_user
+      @offer.pet = @pet
+    end
   end
   def offer_params
     params.require(:offer).permit(:starting_date, :end_date)
