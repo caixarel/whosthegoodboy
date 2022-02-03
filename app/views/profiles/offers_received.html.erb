@@ -7,9 +7,12 @@
       <p>pet id: <%= offer.pet.id %></p>
       <p>start date: <%= offer.starting_date %></p>
       <p>Pet: <%= offer.pet.name %></p>
-      <p>Accepted: <%= offer.accepted? %></p>
-      <%  unless offer.accepted?%>
-      <%= link_to 'Accept offer', pet_accepted_path(offer.pet,offer)%>
+      <p>Accepted: <%= offer.accepted %></p>
+      <%  if offer.accepted != 'accepted'%>
+        <%= link_to 'Accept offer', pet_accepted_path(offer.pet,offer)%>
+      <%end %>
+      <%  if offer.accepted != 'rejected'%>
+        <%= link_to 'Reject offer', pet_rejected_path(offer.pet,offer)%>
       <%end %>
     </li>
   <%end %>

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :pets do
     resources :offers , except: [:show]
     get 'offers/:id/accept', to: 'offers#accept' ,:as => "accepted"
+    get 'offers/:id/reject', to: 'offers#reject' ,:as => "rejected"
+
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
