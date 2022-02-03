@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="pet-cards">
+    <% @pets.each do |pet| %>
+      <div class="pet-card">
+        <div class="name">
+          <strong><p><%= pet.name.upcase %></strong>, <%= pet.category %>
+        </div>
+        <%= pet.description %> <br>
+        <%= pet.address %> <br>
+        <%= pet.price_per_hour %> <br>
+        <div class="pet-img">
+          <img src="#" width="44em" height="54em"/>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>
