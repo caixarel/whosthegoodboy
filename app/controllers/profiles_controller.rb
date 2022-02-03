@@ -10,4 +10,5 @@ class ProfilesController < ApplicationController
   def offers_received
     @pets = current_user.pets
   end
+
 end

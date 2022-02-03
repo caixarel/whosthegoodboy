@@ -38,6 +38,14 @@ class OffersController < ApplicationController
     @current_user = current_user
   end
 
+  def accept
+    offer = Offer.find(params[:id])
+    offer.accepted = true
+    if offer.update
+      redirect_to "/#{current_user.id}/offers_received"
+    end
+  end
+
   private
 
   def find_pet
