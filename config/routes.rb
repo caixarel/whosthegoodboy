@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+
   get ':id/offers_made', to: 'profiles#offers_made'
   get ':id/offers_received', to: 'profiles#offers_received'
-  get ':id/profiles', to: 'profiles#index'
+  get ':id/profiles', to: 'profiles#profile',:as => 'profile'
+
   resources :pets do
     resources :offers , except: [:show]
     get 'offers/:id/accept', to: 'offers#accept' ,:as => "accepted"

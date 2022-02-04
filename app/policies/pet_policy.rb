@@ -4,11 +4,20 @@ class PetPolicy < ApplicationPolicy
       scope.all
     end
   end
-  def new?
+  def index?
       true
-    end
+  end
+  def create?
+    true
+  end
+  def update?
+      true
+  end
+  def destroy?
+      true
+  end
 
-    def create?
-      true
-    end
+  def offers_received?
+    true
+  end
 end

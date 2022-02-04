@@ -1,13 +1,14 @@
 class OffersController < ApplicationController
   before_action :find_pet, except: [:my_offers]
 
-
   def index
-    @offers = @pet.offers
+    @offers = policy_scope(@pet.offers)
   end
 
-
   def new
+    if @pet.user == current_user
+      redirect_to root_path
+    end
     @offer = Offer.new
   end
   def create
