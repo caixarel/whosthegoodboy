@@ -1,18 +1,33 @@
 <div class="container">
-  <div class="pet-cards">
-    <% @pets.each do |pet| %>
-      <div class="pet-card">
-        <div class="name">
-          <strong><p><%= pet.name.upcase %></strong>, <%= pet.category %>
+
+  <!-- Below is the div that just is a 2 column grid for all pets on left and
+  the map on the right-->
+  <div class="parent">
+
+
+    <!-- Below is the left column which contains all the pets -->
+    <div class="pet-cards">
+      <% @pets.each do |pet| %>
+        <div class="pet-card">
+          <div class="name">
+            <strong><p><%= pet.name.upcase %></strong>, <%= pet.category %>
+          </div>
+          <%= pet.description %> <br>
+          <%= pet.address %> <br>
+          <%= pet.price_per_hour %> <br>
+          <div class="pet-img">
+            <img src="#" width="44em" height="54em"/>
+          </div>
         </div>
-        <%= pet.description %> <br>
-        <%= pet.address %> <br>
-        <%= pet.price_per_hour %> <br>
-        <div class="pet-img">
-          <img src="#" width="44em" height="54em"/>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+
+
+    <!-- Below is the right column with the map -->
+
+
+
+
 
   </div>
 </div>
