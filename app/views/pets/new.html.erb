@@ -1,0 +1,9 @@
+<%= simple_form_for @pet do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address%>
+  <%= f.input :description%>
+  <%= f.input :category%>
+  <%= f.input :price_per_hour%>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Create pet", class: "btn btn-primary" %>
+<% end %>

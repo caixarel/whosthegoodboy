@@ -1,6 +1,6 @@
 <div class="container">
   <h1><%= @pet.name %> <br></h1>
-</div>
+<%= cl_image_tag @pet.photo.key, height: 300, crop: :fill %></div>
 
 <div class="container">
   <h1><%= @pet.category %></h1>
