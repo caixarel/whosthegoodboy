@@ -1,13 +1,14 @@
 class OffersController < ApplicationController
   before_action :find_pet, except: [:my_offers]
 
-
   def index
-    @offers = @pet.offers
+    @offers = policy_scope(@pet.offers)
   end
 
-
   def new
+    if @pet.user == current_user
+      redirect_to root_path
+    end
     @offer = Offer.new
   end
   def create
@@ -62,6 +63,7 @@ class OffersController < ApplicationController
 
   def find_pet
     @pet = Pet.find(params[:pet_id])
+    authorize @pet
   end
 
   def add_offer_parameters
@@ -74,6 +76,7 @@ class OffersController < ApplicationController
       @offer.pet = @pet
     end
   end
+
   def offer_params
     params.require(:offer).permit(:starting_date, :end_date)
   end
