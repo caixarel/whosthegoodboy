@@ -3,6 +3,7 @@ class PetsController < ApplicationController
   def index
     @pets = Pet.all
   end
+
   def new
     @pet = Pet.new
   end
@@ -16,6 +17,7 @@ class PetsController < ApplicationController
       render :new
     end
   end
+
   def edit
     @pet = Pet.find(params[:id])
   end
@@ -38,6 +40,9 @@ class PetsController < ApplicationController
     end
   end
 
+  def show
+    @pet = Pet.find(params[:id])
+  end
   private
 
   def pet_params
