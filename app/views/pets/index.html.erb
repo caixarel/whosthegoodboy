@@ -16,7 +16,7 @@
           <%= pet.address %> <br>
           <%= pet.price_per_hour %> <br>
           <div class="pet-img">
-            <img src="#" width="44em" height="54em"/>
+            <%= cl_image_tag @pet.photo.key, height: 300, crop: :fill %></div>
           </div>
         </div>
       <% end %>
