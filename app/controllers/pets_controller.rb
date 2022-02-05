@@ -18,8 +18,13 @@ class PetsController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
     @pet = Pet.new(pets_params)
 
+=======
+    @pet = Pet.new(pet_params)
+    @pet.user = current_user
+>>>>>>> master
     if @pet.save
       redirect_to pets_path
     else
@@ -27,6 +32,7 @@ class PetsController < ApplicationController
     end
   end
 
+<<<<<<< HEAD
   private
 
   def set_pet
@@ -37,4 +43,36 @@ class PetsController < ApplicationController
     params.require(:pet).permit(:name, :address, :price_per_hour, :description, :category)
   end
 
+=======
+  def edit
+    @pet = Pet.find(params[:id])
+  end
+
+  def update
+    @pet = Pet.find(params[:id])
+    if @pet.user == current_user
+      if @pet.update(pet_params)
+        redirect_to pet_path(@pet)
+      else
+        render :edit
+      end
+    end
+  end
+
+  def destroy
+    @pet = Pet.find(params[:id])
+    if @pet.user == current_user
+      @pet.destroy
+    end
+  end
+
+  def show
+    @pet = Pet.find(params[:id])
+  end
+  private
+
+  def pet_params
+    params.require(:pet).permit(:address, :name,:description,:category,:price_per_hour, :photo)
+  end
+>>>>>>> master
 end
