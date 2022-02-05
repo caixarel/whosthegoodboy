@@ -4,14 +4,16 @@ Rails.application.routes.draw do
 
   get ':id/offers_made', to: 'profiles#offers_made'
   get ':id/offers_received', to: 'profiles#offers_received'
-  get ':id/profiles', to: 'profiles#profile',:as => 'profile'
+  get ':id/profiles', to: 'profiles#profile', :as => 'profile'
 
   resources :pets do
-    resources :offers , except: [:show]
-    get 'offers/:id/accept', to: 'offers#accept' ,:as => "accepted"
-    get 'offers/:id/reject', to: 'offers#reject' ,:as => "rejected"
+    resources :offers, except: [:show]
+    get 'offers/:id/accept', to: 'offers#accept', :as => "accepted"
+    get 'offers/:id/reject', to: 'offers#reject', :as => "rejected"
 
   end
+
+  resources :reviews, only: [ :new, :create, :destroy ]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :pets
