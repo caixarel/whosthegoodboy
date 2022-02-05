@@ -1,0 +1,13 @@
+<ul>
+  <%@offers.each do |offer| %>
+    <li><p>starting date: <%= offer.starting_date %></p>
+      <p>ending date:<%= offer.end_date %></p>
+      <p>Total price:<%= offer.total %></p>
+      <%= link_to "Edit", "/pets/#{@pet.id}/offers/#{offer.id}/edit" %>
+      <%= link_to "Remove",
+                  "/pets/#{@pet.id}/offers/#{offer.id}",
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+    </li>
+  <%end %>
+</ul>
