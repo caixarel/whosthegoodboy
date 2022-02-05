@@ -2,7 +2,7 @@ class OffersController < ApplicationController
   before_action :find_pet, except: [:my_offers]
 
   def index
-    @offers = policy_scope(@pet.offers)
+    @offers = @pet.offers#policy_scope(@pet.offers)
   end
 
   def new
@@ -63,7 +63,7 @@ class OffersController < ApplicationController
 
   def find_pet
     @pet = Pet.find(params[:pet_id])
-    authorize @pet
+    #authorize @pet
   end
 
   def add_offer_parameters

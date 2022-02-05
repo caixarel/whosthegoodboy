@@ -1,7 +1,10 @@
+<%= link_to 'Make offer',new_pet_offer_path(@pet)%>
+
 <div class="container">
   <h1><%= @pet.name %> <br></h1>
+  <%if @pet.photo.key %>
 <%= cl_image_tag @pet.photo.key, height: 300, crop: :fill %></div>
-
+  <%end %>
 <div class="container">
   <h1><%= @pet.category %></h1>
   <h2>Description :</h2>

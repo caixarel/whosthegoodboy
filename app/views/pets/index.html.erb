@@ -9,7 +9,7 @@
       <% @pets.each do |pet| %>
         <div class="pet-card">
           <div class="name">
-            <strong><p><%= pet.name.upcase %></strong>, <%= pet.category %>
+            <strong><p><%= link_to pet.name.upcase,pet_path(pet) %></strong>, <%= pet.category %>
           </div>
           <%= pet.description %> <br>
           <%= pet.address %> <br>
