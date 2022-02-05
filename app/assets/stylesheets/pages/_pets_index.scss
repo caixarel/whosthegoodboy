@@ -14,6 +14,7 @@
   grid-column-gap: 16px;
   grid-row-gap: 16px;
 
+  flex-grow: 1;
 }
 
 .pet-card {
@@ -24,4 +25,9 @@
 
 .name {
   font-size: 25px;
+}
+
+
+#map {
+  height: 100vh;
 }
