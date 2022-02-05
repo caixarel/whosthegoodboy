@@ -7,6 +7,7 @@ class PetsController < ApplicationController
       {
         lat: pet.latitude,
         lng: pet.longitude,
+        image_url: helpers.asset_url('dog-park.svg'),
         info_window: render_to_string(partial: "info_window", locals: { pet: pet })
         }
     end
