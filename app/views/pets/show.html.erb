@@ -3,29 +3,30 @@
 </div>
 
 <div class="container">
-  <h1>Description : </h1>
-  <h2> <%= @pet.category %> </h2>
+  <h1><%= @pet.category %></h1>
+  <h2>Description :</h2>
   <p> <%= @pet.description %> </p>
 </div>
 
 <div class="container">
   <h1><%= @pet.category %> <br></h1>
-  <p>This is some text.</p>
 </div>
 
 <div class="container">
-  <h1><%= @pet.price_per_hour %></h1>
-  <p>This is some text.</p>
+  <h1><%= @pet.price_per_hour %> €/H</h1>
 </div>
 
 
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-5">
-      <%= "Lorem ipsum dolor sit amet, consectetur adipisicing elit " * 100 %>
+      <%= "Lorem ipsum dolor sit amet, consectetur adipisicing elit " * 30 %>
     </div>
   </div>
 </div>
+
+
+
 
 
 <%= link_to "go back to all the pets", pet_path %> <br>
