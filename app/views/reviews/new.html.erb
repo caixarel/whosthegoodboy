@@ -1,0 +1,8 @@
+
+Add a review <%= pet.name %>
+
+    <%= simple_form_for [@review] do |f| %>
+      <%= f.association :pet %>
+      <%= f.input :comment, placeholder: 'Enter your review' %>
+      <%= f.submit %>
+      <% end %>
