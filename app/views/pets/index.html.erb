@@ -13,7 +13,7 @@
           </div>
           <%= pet.description %> <br>
           <%= pet.address %> <br>
-          <%= pet.price_per_hour %> <br>
+          <%= pet.price_per_hour %> €/H<br>
           <div class="pet-img">
             <%if  pet.photo.key%>
             <%= cl_image_tag pet.photo.key, height: 100,width: 100, crop: :fill %>
