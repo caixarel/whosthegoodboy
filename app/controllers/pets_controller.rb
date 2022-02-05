@@ -55,7 +55,7 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
   end
 
-  def pets_params
-    params.require(:pet).permit(:name, :address, :price_per_hour, :description, :category)
+  def pet_params
+    params.require(:pet).permit(:name, :address, :price_per_hour, :description, :category, :photo)
   end
 end
