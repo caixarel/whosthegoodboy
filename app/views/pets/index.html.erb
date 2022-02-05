@@ -2,11 +2,10 @@
 
   <!-- Below is the div that just is a 2 column grid for all pets on left and
   the map on the right-->
-  <div class="parent">
-
+  <div class="parent d-flex">
 
     <!-- Below is the left column which contains all the pets -->
-    <div class="pet-cards">
+    <div class="pet-cards col-6">
       <% @pets.each do |pet| %>
         <div class="pet-card">
           <div class="name">
@@ -16,7 +15,9 @@
           <%= pet.address %> <br>
           <%= pet.price_per_hour %> <br>
           <div class="pet-img">
-            <%= cl_image_tag pet.photo.key, height: 300, crop: :fill %>
+            <%if  pet.photo.key%>
+            <%= cl_image_tag pet.photo.key, height: 100,width: 100, crop: :fill %>
+            <%end %>
           </div>
         </div>
       <% end %>
@@ -24,7 +25,7 @@
 
 
     <!-- Below is the right column with the map -->
-    <div class="map_card">
+    <div class="map_card col-6">
       <div id="map"
       style="width: 100%; height: 600px;"
       data-markers="<%= @markers.to_json %>"
