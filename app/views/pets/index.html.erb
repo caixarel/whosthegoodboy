@@ -19,11 +19,13 @@
             <%= cl_image_tag pet.photo.key, height: 100,width: 100, crop: :fill %>
             <%end %>
           </div>
+          <%if pet.user == current_user %>
           <%= link_to 'Edit',edit_pet_path(pet) %>
            <%= link_to "delete",
                   pet_path(pet),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %>
+          <%end %>
     </li>
         </div>
       <% end %>
