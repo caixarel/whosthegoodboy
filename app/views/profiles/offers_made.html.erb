@@ -1,9 +1,19 @@
-<ul>
-  <%@current_user.offers.each do |offer| %>
-    <li><p>start date: <%= offer.starting_date %></p>
-      <p>end date: <%= offer.end_date %></p>
-      <p>start date: <%= offer.starting_date %></p>
-      <p>Pet: <%= offer.pet.name %></p>
+
+<div class='container'>
+  <ul>
+    <%@current_user.offers.each do |offer| %>
+    <li>
+      <div class='card-offer-made'>
+        <p>Start date: <%= offer.starting_date %> <br>
+          End date: <%= offer.end_date %><br>
+          Start date: <%= offer.starting_date %><br>
+          Pet: <%= offer.pet.name %> <br>
+          Accepted: <%= offer.accepted %></p>
+      </div>
     </li>
-  <%end %>
-</ul>
+    <%end %>
+  </ul>
+</div>
+<div class="container ">
+<%= link_to 'Back to profile',profile_path(current_user) , class: "btn-primary go-back" %>
+</div>

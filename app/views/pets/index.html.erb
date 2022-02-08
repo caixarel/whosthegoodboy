@@ -4,22 +4,29 @@
   the map on the right-->
   <div class="parent d-flex">
 
-
     <!-- Below is the left column which contains all the pets -->
     <div class="pet-cards col-6">
       <% @pets.each do |pet| %>
         <div class="pet-card">
           <div class="name">
-            <strong><p><%= pet.name.upcase %></strong>, <%= pet.category %>
+            <strong><p><%= link_to pet.name.upcase,pet_path(pet) %></strong>, <%= pet.category %>
           </div>
           <%= pet.description %> <br>
           <%= pet.address %> <br>
-          <%= pet.price_per_hour %> <br>
+          <%= pet.price_per_hour %> €/H<br>
           <div class="pet-img">
           <% if  pet.photo.key%>
             <%= cl_image_tag pet.photo.key, height: 100, width: 100, crop: :fill %>
           <% end %>
           </div>
+          <%if pet.user == current_user %>
+          <%= link_to 'Edit',edit_pet_path(pet) %>
+           <%= link_to "delete",
+                  pet_path(pet),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+          <%end %>
+    </li>
         </div>
       <% end %>
     </div>
