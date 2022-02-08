@@ -62,3 +62,11 @@ body {
   margin: auto;
   display: block;
 }
+a {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: #535B61;
+  }
+}

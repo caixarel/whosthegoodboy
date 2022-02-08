@@ -1,17 +1,32 @@
 <div class="navbar" style="background-color: #f4f4f4;">
-  <nav class="container ">
-  <div class="row w-100">
-      <div class="col-sm"></div>
-      <div class="col-sm">
-        <div class="logo">
-          <a class="navbar-brand" href="#" style="color:black;" >Who's the good boy?</a>
+  <nav class="container">
+  <div class="row w-100 ">
+      <div class="col-sm title-nav ">
+        <div class="logo ">
+          <a class="navbar-brand " href="/" style="color:black;" >Who's the good boy?</a>
         </div>
       </div>
-      <div class="col-sm user-devices">
-        <div class="login-items h-100">
-            <a class="sign-up" href="#">sign up</a>
-            <a class="log-in pl-3" href="#">log in</a>
+      <div class="col-sm user-devices ">
+
+        <div class="dropdown d-flex justify-content-end">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Navigation
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <%unless current_user %>
+              <a class="dropdown-item sign-up" href="/users/sign_up">Sign up</a>
+              <a class="dropdown-item log-in" href="/users/sign_in">Log in</a>
+            <%end %>
+
+            <%= link_to 'Create Pet',new_pet_path , class: "dropdown-item log-out" %>
+            <%if current_user %>
+              <%= link_to 'Your account',profile_path(current_user) , class: "dropdown-item log-out" %>
+            <%end %>
+            <%= link_to "Log out", destroy_user_session_path, :method => :delete, class: "dropdown-item log-out" %>
+            <a class="dropdown-item pets" href="/pets">See our pets</a>
+          </div>
         </div>
+
       </div>
     </div>
   </nav>
