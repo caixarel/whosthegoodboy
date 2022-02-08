@@ -1,4 +1,20 @@
-<%= link_to 'Offers Made', "/#{@user.id}/offers_made" %> <br>
-<%= link_to 'Offers received ', "/#{@user.id}/offers_received" %> <br>
-<%= link_to 'Change password ', "/users/edit" %> <br>
-<%= link_to "Logout", destroy_user_session_path, :method => :delete  %>
+
+<div class='container d-flex flex-column divOffer'>
+  <div class='centered_div'>
+    <h1 >Your account</h1>
+    <div class='d-flex'>
+      <div class='card-offer'><%= link_to "/#{@user.id}/offers_made"  do %>
+    <div class='link-content'> <h4>Made offers</h4>  <p>View all the offer you have made</p></div>
+    <% end %>
+<br></div>
+      <div class='card-offer'><%= link_to "/#{@user.id}/offers_received" do %>
+    <div class='link-content'> <h4>Received offers</h4>  <p>View, accept or reject offers made to you</p></div>
+    <% end %> <br></div>
+      <div class='card-offer'><%= link_to "/users/edit" do %>
+    <div class='link-content'> <h4>Reset password</h4>  <p>Forgot your password?</p></div>
+    <% end %> <br></div>
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,46 @@
+ul{
+  list-style-type: none;
+  margin: 10px 0px;
+   padding: 0px;
+}
+
+.centered_div{
+  width: 70vw;
+  margin: auto;
+  padding: 20px;
+  h1{
+    margin-left: 10px;
+  }
+}
+.card-offer{
+  width: 33%;
+  height: 100px;
+    margin:10px;
+
+   border-style: solid;
+  border-color: rgb(52, 45, 133);
+  a{
+    font-size: 10px;
+  }
+}
+.link-content{
+    height: 100%;
+    padding: 20px;
+    h4{
+      font-size: 18px;
+      font-weight: bolder;
+    }
+}
+.card-offer-made{
+    margin:10px;
+  padding: 10px;
+   border-style: solid;
+  border-color: rgb(52, 45, 133);
+  a{
+    font-size: 10px;
+  }
+}
+.go-back{
+  margin :10px;
+  padding: 10px;
+}
