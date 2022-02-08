@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get ':id/offers_made', to: 'profiles#offers_made'
   get ':id/offers_received', to: 'profiles#offers_received'
   get ':id/profiles', to: 'profiles#profile', :as => 'profile'
+  get ':id/my_pets', to: 'profiles#my_pets', :as => 'my_pets'
 
   resources :pets do
     resources :offers, except: [:show]
