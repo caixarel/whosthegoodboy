@@ -1,10 +1,10 @@
-
 <div  class='w-50 form'>
-  <div class="container shadow p-3 mb-5 bg-white rounded">
-    <h3 class="text-center"><%= @pet.name %> <br></h3>
+
+  <div class="container shadow p-3 mb-5 rounded " id="background-color" >
+    <h3 class="text-center"><%= @pet.name.upcase %> <br><br></h3>
     <%if @pet.photo.key %>
-      <div class= 'd-flex justify-content-center'>
-      <%= cl_image_tag @pet.photo.key, height: 200, crop: :fill %>
+      <div class= 'd-flex justify-content-center' >
+      <%= cl_image_tag @pet.photo.key, height: 200, width: 200, radius: 100, crop: :fill %>
       </div>
 
     <%end %> <br>
@@ -24,14 +24,13 @@
       <%= simple_form_for [ @pet, @offer ] do |f| %>
         <%= f.input :starting_date, as: :date, html5: true%>
         <%= f.input :end_date, as: :date, html5: true%>
-        <%= f.submit "Submit offer", class: "btn btn-primary" %>
+        <%= f.submit "Submit offer", class: "submit-btn" %>
       <% end %>
     </div>
 
-      <%= link_to "go back to all the pets", pets_path ,class:'btn btn-primary'%> <br>
+      <br><%= link_to "go back to all the pets", pets_path ,class:'go-back-btn'%> <br>
     </div>
   </div><br>
-  <div class="container shadow p-3 mb-5 bg-white rounded">
 
 
 </div>

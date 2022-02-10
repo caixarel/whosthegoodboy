@@ -1,5 +1,5 @@
 <div class="navbar" style="background-color: #f4f4f4;">
-  <nav class="container">
+ <!--nav class="container" id="idk"-->
   <div class="w-100 row  ">
       <div class="col-sm title-nav ">
         <div class="logo ">
@@ -13,6 +13,7 @@
             <%= text_field_tag :query,
               params[:query],
               class: "form-control",
+              id: "search-form-control",
               placeholder: "Find a pet"
             %>
             <%= submit_tag "Search", class: "btn btn-ghost" %>
