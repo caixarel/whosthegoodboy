@@ -1,0 +1,22 @@
+
+<div class='container d-flex w-50 flex-column divOffer shadow p-3 mb-5 bg-white rounded'>
+    <h1 >Your account</h1>
+    <div class='d-flex  flex-column  '>
+      <% @my_pets.each do |pet| %>
+        <div class='d-flex shadow p-3 mb-5 bg-white rounded'>
+          <%if pet.photo.key %>
+            <%= cl_image_tag pet.photo.key, height: 120,width:100, crop: :fill %>
+          <%end %>
+          <div class="d-flex flex-column pl-3">
+            <%= pet.name %>
+            <%= link_to 'Edit',edit_pet_path(pet) ,class:'btn btn-primary btn-sm' %>
+           <%= link_to "Delete",
+                  pet_path(pet),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" },class:'btn btn-primary btn-sm' %>
+          </div>
+        </div><br>
+      <%end %><br>
+    </div>
+
+</div>

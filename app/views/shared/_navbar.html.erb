@@ -1,33 +1,46 @@
 <div class="navbar" style="background-color: #f4f4f4;">
   <nav class="container">
-  <div class="row w-100 ">
+  <div class="w-100 row  ">
       <div class="col-sm title-nav ">
         <div class="logo ">
           <a class="navbar-brand " href="/" style="color:#d14413;;" >WHO'S THE GOOD BOY?</a>
         </div>
       </div>
-      <div class="col-sm user-devices ">
-
-        <div class="dropdown d-flex justify-content-end">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Navigation
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <%unless current_user %>
-              <a class="dropdown-item sign-up" href="/users/sign_up">Sign up</a>
-              <a class="dropdown-item log-in" href="/users/sign_in">Log in</a>
-            <%end %>
-
-            <%= link_to 'Create Pet',new_pet_path , class: "dropdown-item log-out" %>
-            <%if current_user %>
-              <%= link_to 'Your account',profile_path(current_user) , class: "dropdown-item log-out" %>
-            <%end %>
-            <%= link_to "Log out", destroy_user_session_path, :method => :delete, class: "dropdown-item log-out" %>
-            <a class="dropdown-item pets" href="/pets">See our pets</a>
-          </div>
-        </div>
-
+      <div class='search-bar'>
+        <%= form_tag pets_path, method: :get do %>
+          <div class="col-sm d-flex column">
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find a pet"
+            %>
+            <%= submit_tag "Search", class: "btn btn-primary" %>
+            </div>
+          <% end %>
       </div>
-    </div>
+
+
+      <div class="col-sm d-flex justify-content-end">
+        <div class='d-flex column'>
+             <%unless current_user %>
+              <a class="sign-up btn btn-primary mr-2" href="/users/sign_up">Sign up</a>
+              <a class="log-in btn btn-primary mr-2" href="/users/sign_in">Log in</a>
+            <%else %>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Navigation
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+
+              <%= link_to 'Create Pet',new_pet_path , class: "dropdown-item log-out" %>
+              <%if current_user %>
+                <%= link_to 'Your account',profile_path(current_user) , class: "dropdown-item log-out" %>
+              <%end %>
+              <%= link_to "Log out", destroy_user_session_path, :method => :delete, class: "dropdown-item log-out" %>
+            </div>
+          </div>
+        <%end %>
+        </div>
+      </div>
   </nav>
 </div>

@@ -6,6 +6,7 @@
 
     <!-- Below is the left column which contains all the pets -->
     <div class="pet-cards col-6">
+      <%unless @pets.empty? %>
       <% @pets.each do |pet| %>
         <div class="pet-card">
           <% if  pet.photo.key%>
@@ -33,6 +34,9 @@
           </div>
         </div>
       <% end %>
+      <%else %>
+        <h1>No pets found!</h1>
+      <%end %>
     </div>
 
 
