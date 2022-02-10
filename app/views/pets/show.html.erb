@@ -20,3 +20,18 @@
       <%= link_to "go back to all the pets", pets_path ,class:'btn btn-primary'%> <br>
     </div>
 </div>
+<<<<<<< HEAD
+=======
+
+ <%if pet.user == current_user %>
+          <%= link_to 'Edit',edit_pet_path(pet) %>
+           <%= link_to "delete",
+                  pet_path(pet),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+          <%end %>
+
+
+
+<%= link_to "go back to all the pets", pet_path %> <br>
+>>>>>>> master

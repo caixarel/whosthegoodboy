@@ -45,6 +45,14 @@ body {
   font-size: 40px;
 }
 
+p a {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: #535b61;
+  }
+}
 
 .user-devices a {
   text-decoration: none;
