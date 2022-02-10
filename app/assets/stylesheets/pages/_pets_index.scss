@@ -74,6 +74,13 @@
   font-size: 16px;
   font-weight: bold;
 
+}
+
+.pet-card h3 {
+  font-size: 13px;
+  font-weight: lighter;
+  color: grey;
+
   margin-bottom: 10px;
 }
 
@@ -98,8 +105,9 @@
 
 
 
-.name {
-  font-size: 25px;
+#name a:hover {
+
+  color: #d14413;
 }
 
 
