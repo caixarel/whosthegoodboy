@@ -1,9 +1,9 @@
 
-<div class='container shadow p-3 mb-5 bg-white rounded'>
+<div class='container w-50 shadow p-3 mb-5 bg-white rounded'>
   <ul>
     <%@current_user.offers.each do |offer| %>
     <li>
-      <div class='card-offer-made'>
+      <div class='card-offer-made shadow bg-white rounded'>
         <p>Start date: <%= offer.starting_date %> <br>
           End date: <%= offer.end_date %><br>
           Pet: <%= offer.pet.name %> <br>

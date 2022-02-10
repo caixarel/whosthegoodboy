@@ -15,7 +15,7 @@
       <%= simple_form_for [ @pet, @offer ] do |f| %>
         <%= f.input :starting_date, as: :date, html5: true%>
         <%= f.input :end_date, as: :date, html5: true%>
-        <%= f.submit "Submit review", class: "btn btn-primary" %>
+        <%= f.submit "Submit offer", class: "btn btn-primary" %>
       <% end %>
       <%= link_to "go back to all the pets", pets_path ,class:'btn btn-primary'%> <br>
     </div>

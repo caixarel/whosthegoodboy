@@ -1,20 +1,11 @@
 
-
-
-
 <div class="container">
   <div class="row justify-content-center">
 
 
-      <p id="title"><%= link_to "Find the cutest pets near you!", pets_path %></p>
-          <%# <%= form_for @user do |f| %>
-            <%# <%= f.input :location, placeholder: 'type your location...' %>
-            <%# <%= f.button :submit %>
-          <%# <% end %>
-          <%# <%= form_for :user do |f| %>
-          <%# Location: <%= f.text_field :first_name %>
-          <%# <%= f.submit %>
-        <%# <% end %>
+      <%= link_to pets_path do %>
+        <div class='link-content btn btn-outline-dark'  ><p id="title">Find the cutest pets around you</p></div>
+        <% end %></p>
     </div>
   </div>
   <%= image_tag 'home.jpg', class: "home_image" %>

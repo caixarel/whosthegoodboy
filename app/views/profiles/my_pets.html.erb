@@ -1,8 +1,7 @@
 
-<div class='container d-flex flex-column divOffer shadow p-3 mb-5 bg-white rounded'>
-  <div class='centered_div'>
+<div class='container d-flex w-50 flex-column divOffer shadow p-3 mb-5 bg-white rounded'>
     <h1 >Your account</h1>
-    <div class='d-flex flex-column '>
+    <div class='d-flex  flex-column  '>
       <% @my_pets.each do |pet| %>
         <div class='d-flex shadow p-3 mb-5 bg-white rounded'>
           <%if pet.photo.key %>
@@ -20,6 +19,4 @@
       <%end %><br>
     </div>
 
-
-  </div>
 </div>
