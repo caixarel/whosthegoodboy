@@ -2,11 +2,27 @@
 <div class="container">
   <div class="row justify-content-center">
 
+    <div class="text-intro">
+      <p><strong>Who's the good boy</strong> is the ultimate platform to fill your need for cuteness by renting the cutest pets near you!</p>
+
+      <p>The concept was born in 2022, after Helene, Bruno and Noah thought of a new and nice way to allow people without pets to experience having one for a limited period of time, before committing to getting a pet</p>
+      <p><strong>Who's the good boy</strong> can also be used by owners to rent out their pets when they are too busy to walk their lovely dog or when they go on holidays and need a <strong>safe</strong> solution to take care of their loved one.</p>
+    </div>
+
+    <div class="link">
+      <p><br><%= link_to "View all good boys ", pets_path %></p>
 
       <%= link_to pets_path do %>
         <div class='link-content btn btn-outline-dark'  ><p id="title">Find the cutest pets around you</p></div>
         <% end %></p>
     </div>
   </div>
+
+
   <%= image_tag 'home.jpg', class: "home_image" %>
 </div>
+<br>
+
+  <div class="disclamer row justify-content-center">
+      <p><em><strong>Disclamer</strong>: To adopt a pet is a committment you make, please think about it!</em></p>
+  </div>

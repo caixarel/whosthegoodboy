@@ -17,8 +17,11 @@
               <%= pet.address.capitalize %>
             </div>
 
+          <div id="name">
             <h1><%= link_to pet.name.upcase,pet_path(pet) %></h1>
+          </div>
 
+            <h3><%= pet.category %></h3>
             <p><%= pet.description.capitalize %></p>
             <p><%= pet.price_per_hour %> € / h</p>
 
