@@ -1,3 +1,5 @@
+<div  class='w-50 form'>
+
 <h2>Change your password</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
@@ -20,8 +22,8 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Change my password" %>
+    <%= f.button :submit, "Change my password" ,class:'btn btn-primary'%>
   </div>
 <% end %>
-
+</div>
 <%= render "devise/shared/links" %>

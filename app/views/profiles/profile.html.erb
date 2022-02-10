@@ -1,16 +1,19 @@
 
-<div class='container d-flex flex-column divOffer'>
+<div class='container d-flex flex-column divOffer shadow p-3 mb-5 bg-white rounded'>
   <div class='centered_div'>
     <h1 >Your account</h1>
-    <div class='d-flex'>
-      <div class='card-offer'><%= link_to "/#{@user.id}/offers_made"  do %>
-    <div class='link-content'> <h4>Made offers</h4>  <p>View all the offer you have made</p></div>
-    <% end %>
-<br></div>
-      <div class='card-offer'><%= link_to "/#{@user.id}/offers_received" do %>
-    <div class='link-content'> <h4>Received offers</h4>  <p>View, accept or reject offers made to you</p></div>
+    <div class='d-flex flex-wrap '>
+      <div class='card-offer shadow bg-white rounded'><%= link_to "/#{@user.id}/offers_made"  do %>
+        <div class='link-content'> <h4>Made offers</h4>  <p>View all the offer you have made</p></div>
+        <% end %>
+      <br></div>
+      <div class='card-offer shadow bg-white rounded'><%= link_to "/#{@user.id}/offers_received" do %>
+        <div class='link-content'> <h4>Received offers</h4>  <p>View, accept or reject offers made to you</p></div>
     <% end %> <br></div>
-      <div class='card-offer'><%= link_to "/users/edit" do %>
+    <div class='card-offer shadow bg-white rounded'><%= link_to my_pets_path do %>
+      <div class='link-content'> <h4>My pets</h4>  <p>View, delete or edit your pets</p></div>
+    <% end %> <br></div>
+      <div class='card-offer shadow bg-white rounded'><%= link_to "/users/edit" do %>
     <div class='link-content'> <h4>Reset password</h4>  <p>Forgot your password?</p></div>
     <% end %> <br></div>
     </div>

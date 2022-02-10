@@ -1,13 +1,16 @@
-<% if @offer.errors.any? %>
-    <ul>
-    <% @offer.errors.full_messages.each do |message| %>
-      <li><%= @offer.errors.messages[:total][0] %></li>
-    <% end %>
-    </ul>
-  <% end %>
-<%= simple_form_for [ @pet, @offer ] do |f| %>
-  <%= f.input :starting_date, as: :date, html5: true%>
-  <%= f.input :end_date, as: :date, html5: true%>
 
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+<div  class='w-50 form shadow p-3 mb-5 bg-white rounded'>
+  <% if @offer.errors.any? %>
+    <ul>
+      <% @offer.errors.full_messages.each do |message| %>
+        <li><%= @offer.errors.messages[:total][0] %></li>
+      <% end %>
+      </ul>
+    <% end %>
+  <%= simple_form_for [ @pet, @offer ] do |f| %>
+    <%= f.input :starting_date, as: :date, html5: true%>
+    <%= f.input :end_date, as: :date, html5: true%>
+
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
+</div>

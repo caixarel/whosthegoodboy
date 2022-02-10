@@ -2,6 +2,9 @@
   justify-content: space-between;
   background: white;
 }
+.navbar{
+  top:-16px;
+}
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -11,6 +14,34 @@
   width: 40px;
 }
 .title-nav{
-
+  a{
+    font-size: 10px;
+  }
+}
+.search-bar{
   flex-grow: 10;
+}
+.logo{
+
+  padding: 10px;
+}
+.sign-up{
+  width: 70px;
+  font-size: 10px;
+  height: 30px;
+  color: white;
+
+}
+.log-in{
+  width: 70px;
+  font-size: 10px;
+  height: 30px;
+  color: white;
+}
+#dropdownMenuButton{
+  font-size: 10px;
+  height: 37px;
+}
+.btn{
+  margin-bottom: 5px;
 }

@@ -17,8 +17,7 @@ ul{
   height: 100px;
     margin:10px;
 
-   border-style: solid;
-  border-color: rgb(52, 45, 133);
+
   a{
     font-size: 10px;
   }
@@ -30,12 +29,13 @@ ul{
       font-size: 18px;
       font-weight: bolder;
     }
+    p{
+      font-size: 12px;
+    }
 }
 .card-offer-made{
     margin:10px;
   padding: 10px;
-   border-style: solid;
-  border-color: rgb(52, 45, 133);
   a{
     font-size: 10px;
   }
@@ -43,4 +43,8 @@ ul{
 .go-back{
   margin :10px;
   padding: 10px;
+}
+
+.form{
+  margin:auto;
 }
