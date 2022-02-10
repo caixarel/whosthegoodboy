@@ -10,6 +10,7 @@
         <div class="pet-card">
           <% if  pet.photo.key%>
             <%= cl_image_tag pet.photo.key, height: 200, width: 200, crop: :fill %>
+
           <% end %>
 
           <div class="pet-card-infos">
@@ -22,7 +23,11 @@
           </div>
 
             <h3><%= pet.category %></h3>
-            <p><%= pet.description.capitalize %></p>
+
+          <div class="description">
+            <p><%= pet.description.capitalize %> <% if pet.description.length > 20%><%= link_to "...", pet_path(pet) %><%end%></p>
+
+          </div>
             <p><%= pet.price_per_hour %> € / h</p>
 
           </div>
