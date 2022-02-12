@@ -19,10 +19,6 @@
     <div class='shadow bg-white rounded p-3 mb-1'>
       <h4>Price:</h4> <p><%= @pet.price_per_hour %> €/H</p>
     </div><br><br>
-
-
-
-
     <div class='shadow bg-white rounded p-3'>
       <h4>Make your offer</h4><br>
       <%= simple_form_for [ @pet, @offer ] do |f| %>
