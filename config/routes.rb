@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     get 'offers/:id/accept', to: 'offers#accept', :as => "accepted"
     get 'offers/:id/reject', to: 'offers#reject', :as => "rejected"
 
+    resources :reviews
   end
-
-  resources :reviews, only: [ :new, :create, :destroy ]
 end

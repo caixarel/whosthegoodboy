@@ -53,8 +53,11 @@ class PetsController < ApplicationController
   end
 
   def show
+    @pet = Pet.find(params[:id])
     @offer = Offer.new
+    @review = Review.new
   end
+
   private
 
   def set_pet
