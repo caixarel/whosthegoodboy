@@ -2,16 +2,12 @@ class PetsController < ApplicationController
   before_action :set_pet, only: [:edit, :update, :destroy, :show]
 
   def index
-<<<<<<< HEAD
-    @pets = Pet.all.order(:id)
-=======
     #@pets = Pet.all.order(:id)
     if params[:query].present?
       @pets = Pet.search_by_name_and_address(params[:query])
     else
       @pets = Pet.all.order(:id)
     end
->>>>>>> master
     @markers = @pets.geocoded.map do |pet|
       {
         lat: pet.latitude,
@@ -56,17 +52,12 @@ class PetsController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
-#  def show
-#    @pet = Pet.find(params[:id])
-#    @reviews = Review.where(pet_id: @review)
-#  end
-
-=======
   def show
+    @pet = Pet.find(params[:id])
     @offer = Offer.new
+    @review = Review.new
   end
->>>>>>> master
+
   private
 
   def set_pet

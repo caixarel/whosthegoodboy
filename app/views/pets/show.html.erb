@@ -35,16 +35,24 @@
 
 
 
+<h2>
+  <%= pluralize @pet.reviews.size, "review" %>
+</h2>
 
-
-<%= link_to "go back to all the pets", pet_path %> <br>
-<%= link_to "Write a review", new_pet_review_path(@pet), class: "btn btn-small btn realto" %> <br>
-
-
-REVIEWS <br>
-
-  <%= @pet.reviews.each do |review| %>
-    <%= @review.rating %>
-    <%= @review.comment %>
+<div id="reviews">
+  <% if @pet.reviews.blank? %>
+    Be the first to leave a review for <%= @pet.name %>
+  <% else %>
+    <% @pet.reviews.each do |review| %>
+      <p><%= current_user %></p>
+      <p><%= review.comment %></p>
+      <p><%= review.rating %></p>
+    <% end %>
   <% end %>
 </div>
+
+<%= simple_form_for([ @pet, @review ]) do |f| %>
+  <%= f.input :comment, as: :text %>
+  <%= f.input :rating, as: :integer, input_html: {min: 1, max: 5} %>
+  <%= f.button :submit %>
+<% end %>
