@@ -19,12 +19,12 @@
   <h1><%= @pet.price_per_hour %> €/H</h1>
 </div>
 
+<div class="container">
+  <h1><%= @avg_rating %> €/H</h1>
+</div>
 
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-5">
-      <%= "Lorem ipsum dolor sit amet, consectetur adipisicing elit " * 30 %>
-    </div>
   </div>
 </div>
 
@@ -32,4 +32,16 @@
 
 
 
+
+
+
 <%= link_to "go back to all the pets", pet_path %> <br>
+<%= link_to "Write a review", new_pet_review_path(@pet), class: "btn btn-small btn realto" %> <br>
+
+
+REVIEWS <br>
+
+  <%= @pet.reviews.each do |review| %>
+    <%= @review.rating %>
+    <%= @review.comment %>
+  <% end %>

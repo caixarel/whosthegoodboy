@@ -1,8 +1,9 @@
 class Pet < ApplicationRecord
   belongs_to :user
   has_many :offers, dependent: :destroy
+  has_many :reviews, through: :offers
 
-  geocoded_by :address
+  #geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
   has_one_attached :photo

@@ -45,7 +45,7 @@ class OffersController < ApplicationController
 
   def accept
     offer = Offer.find(params[:id])
-    #offer.accepted = true
+    offer.accepted = true
     if offer.update(accepted: 'accepted')
       redirect_to "/#{current_user.id}/offers_received"
     end
@@ -53,7 +53,7 @@ class OffersController < ApplicationController
 
   def reject
     offer = Offer.find(params[:id])
-    #offer.accepted = true
+    offer.accepted = true
     if offer.update(accepted: 'rejected')
       redirect_to "/#{current_user.id}/offers_received"
     end
@@ -63,7 +63,7 @@ class OffersController < ApplicationController
 
   def find_pet
     @pet = Pet.find(params[:pet_id])
-    #authorize @pet
+    authorize @pet
   end
 
   def add_offer_parameters

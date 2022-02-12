@@ -1,8 +1,8 @@
 
-Add a review for<%= pet.name %>.
+Add a review for <%= @pet.name %>.
 
-    <%= form_for [@review] do |f| %>
-      <%= f.association :pet %>
+    <%= simple_form_for [@pet, @review] do |f| %>
       <%= f.input :comment, placeholder: 'Enter your comment' %>
-      <%= f.number_field :rating %>
+      <%= f.number_field :rating, value: 1,min: 1, max: 5 %>
+      <%= f.submit %>
       <% end %>

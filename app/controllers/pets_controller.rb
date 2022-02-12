@@ -3,7 +3,6 @@ class PetsController < ApplicationController
 
   def index
     @pets = Pet.all.order(:id)
-
     @markers = @pets.geocoded.map do |pet|
       {
         lat: pet.latitude,
@@ -48,8 +47,11 @@ class PetsController < ApplicationController
     end
   end
 
-  def show
-  end
+#  def show
+#    @pet = Pet.find(params[:id])
+#    @reviews = Review.where(pet_id: @review)
+#  end
+
   private
 
   def set_pet
