@@ -4,7 +4,7 @@
     <h3 class="text-center"><%= @pet.name.upcase %> <br><br></h3>
     <%if @pet.photo.key %>
       <div class="d-flex justify-content-center" >
-        <%= cl_image_tag @pet.photo.key, height: 200, width: 200, crop: :fill, radius: 20 %>
+        <%= cl_image_tag @pet.photo.key, height: 200, width: 200, crop: :fill, :style => "border-radius: 50%" %>
       </div>
 
     <%end %> <br>

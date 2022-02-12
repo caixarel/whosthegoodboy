@@ -1,3 +1,4 @@
-<h4><%= link_to pet.name, pet_path(pet)%></h4>
-<%= cl_image_tag pet.photo.key, height: 50,width:50, crop: :fill%>
+<h4><%= link_to pet.name, pet_path(pet)%></h4><br>
+<%= pet.rating %>
+<%= cl_image_tag pet.photo.key, height: 50,width:50, crop: :fill%><br>
 <p><%= pet.address %></p>
