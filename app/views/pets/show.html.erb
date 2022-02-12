@@ -3,7 +3,7 @@
   <div class="container shadow p-3 mb-5 rounded " id="background-color" >
     <h3 class="text-center"><%= @pet.name.upcase %> <br><br></h3>
     <%if @pet.photo.key %>
-      <div class= 'd-flex justify-content-center' >
+      <div class="pet-img", style="background-color:transparent;" >
       <%= cl_image_tag @pet.photo.key, height: 200, width: 200, radius: 100, crop: :fill %>
       </div>
 

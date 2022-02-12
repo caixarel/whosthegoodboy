@@ -63,6 +63,11 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-brand {
+  padding-left: 15px;
+}
+
 .title-nav{
   width: 50px;
   a{
@@ -79,7 +84,7 @@
 .sign-up{
   color: #d14413;
   background-color: none;
-  border: 1px solid #d14413;
+  //border: 1px solid #d14413;
   font-size: 15px;
   padding: 8px 24px;
   margin-top: 5px;
@@ -90,12 +95,13 @@
 
 }
 .sign-up:hover {
+  color: #d14413;
   opacity: 1;
 }
 .log-in{
   color: #d14413;
   background-color: none;
-  border: 1px solid #d14413;
+ // border: 1px solid #d14413;
   font-size: 15px;
   padding: 8px 24px;
   margin-top: 5px;
@@ -106,6 +112,7 @@
 }
 
 .log-in:hover {
+  color: #d14413;
   opacity: 1;
 }
 #dropdownMenuButton{
@@ -118,6 +125,8 @@
 
 
 .navbar-container{
+  display: flex;
+
   margin-right: 0;
   width: 100%;
 }
