@@ -46,6 +46,7 @@
 
 .btn-menu {
   color: #d14413;
+  background-color: none;
   border: 1px solid #d14413;
   font-size: 15px;
   padding: 8px 24px;
@@ -77,6 +78,7 @@
 }
 .sign-up{
   color: #d14413;
+  background-color: none;
   border: 1px solid #d14413;
   font-size: 15px;
   padding: 8px 24px;
@@ -92,6 +94,7 @@
 }
 .log-in{
   color: #d14413;
+  background-color: none;
   border: 1px solid #d14413;
   font-size: 15px;
   padding: 8px 24px;
@@ -111,4 +114,10 @@
 }
 .btn{
   margin-bottom: 5px;
+}
+
+
+.navbar-container{
+  margin-right: 0;
+  width: 100%;
 }
