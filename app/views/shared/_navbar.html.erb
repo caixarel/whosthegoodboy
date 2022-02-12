@@ -24,11 +24,11 @@
     </div>
 
 
-    <div class="col-sm d-flex justify-content-end">
-      <div class='d-flex column'>
+
+      <div class='d-flex column justify-content-end'>
         <%unless current_user %>
-          <a class="sign-up btn  mr-2" href="/users/sign_up">Sign up</a>
-          <a class="log-in btn  mr-2" href="/users/sign_in">Log in</a>
+          <a class="sign-up btn  " href="/users/sign_up">Sign up</a>
+          <a class="log-in btn    " href="/users/sign_in">Log in</a>
         <%else %>
           <button class="btn-menu dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              MENU
@@ -45,6 +45,5 @@
 
         <%end %>
       </div>
-    </div>
   </div>
 </div>

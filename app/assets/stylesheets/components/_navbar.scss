@@ -4,7 +4,8 @@
 }
 
 #search-form-control {
-  width: 50%;
+  margin-left: 5%;
+
 }
 .search-bar {
   height: calc(2em + 1em + 2px);
@@ -22,7 +23,7 @@
 }
 
 .navbar{
-  top:-16px;
+  top:-11px;
   display: flex;
   justify-content: space-between;
 }
@@ -34,7 +35,7 @@
 .btn-ghost {
   color: #4A4A4A;
 
-  padding: 8px 24px;
+  padding: 8px 4px;
 
   font-weight: lighter;
   opacity: 0.6;
@@ -69,7 +70,6 @@
 }
 
 .title-nav{
-  width: 50px;
   a{
     font-size: 13px;
   }
@@ -86,7 +86,7 @@
   background-color: none;
   //border: 1px solid #d14413;
   font-size: 15px;
-  padding: 8px 24px;
+  padding: 8px 4px;
   margin-top: 5px;
   border-radius: 50px;
   font-weight: lighter;
@@ -103,7 +103,7 @@
   background-color: none;
  // border: 1px solid #d14413;
   font-size: 15px;
-  padding: 8px 24px;
+  padding: 8px 4px;
   margin-top: 5px;
   border-radius: 50px;
   font-weight: lighter;
@@ -126,7 +126,7 @@
 
 .navbar-container{
   display: flex;
-
+  padding: 5px 0px 0px;
   margin-right: 0;
   width: 100%;
 }
