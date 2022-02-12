@@ -41,7 +41,9 @@
         <% else %>
         <div>
           <% @pet.reviews.each do |review| %>
-            <h5 class="user"><%= current_user.email %></h5>
+          <% if current_user.full_name %>
+            <h5 class="user"><%= current_user.full_name %></h5>
+          <%end %>
             <p><%= review.comment %></p>
             <p class="pet-review pb-2"><%= review.rating %></p><br>
 
