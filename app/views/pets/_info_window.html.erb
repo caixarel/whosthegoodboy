@@ -1,3 +1,5 @@
 <h4><%= link_to pet.name, pet_path(pet)%></h4><br>
+<% if pet.photo.attached? %>
 <%= cl_image_tag pet.photo.key, height: 50,width:50, crop: :fill%><br>
+<% end %>
 <p><%= pet.address %></p>

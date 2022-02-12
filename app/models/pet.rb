@@ -19,6 +19,5 @@ class Pet < ApplicationRecord
   validates :description, presence: true
   validates :category, presence: true
   validates :price_per_hour, presence: true
-  validates :photo, presence: true
 
 end

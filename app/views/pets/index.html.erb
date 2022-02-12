@@ -9,7 +9,7 @@
       <%unless @pets.empty? %>
       <% @pets.each do |pet| %>
         <div class="pet-card">
-          <% if  pet.photo.key%>
+          <% if pet.photo.attached? %>
             <%= cl_image_tag pet.photo.key, height: 200, width: 200, crop: :fill %>
 
           <% end %>

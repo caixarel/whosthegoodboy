@@ -2,7 +2,7 @@
 
   <div class="container shadow p-3 mb-5 rounded ", style="background-color:#f9e5de" id="background-color" >
     <h3 class="text-center"><%= @pet.name.upcase %> <br><br></h3>
-    <%if @pet.photo.key %>
+    <%if @pet.photo.attached? %>
       <div class="d-flex justify-content-center" >
         <%= cl_image_tag @pet.photo.key, height: 200, width: 200, crop: :fill, :style => "border-radius: 50%" %>
       </div>

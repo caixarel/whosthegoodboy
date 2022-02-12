@@ -7,6 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "faker"
 
+Review.destroy_all
+Offer.destroy_all
+Pet.destroy_all
+User.destroy_all
+
+user1 = User.create(email: 'helene@whosthegoodboy.com', password: '123123')
+user2 = User.create(email: 'bruno@whosthegoodboy.com', password: '123123')
+
 puts 'Creating 20 fake dogs.'
 20.times do
   pet = Pet.new(
@@ -29,6 +37,6 @@ puts 'Creating 20 fake cats.'
     price_per_hour: rand(5..5000),
     category: Faker::Creature::Cat.breed
   )
-  pet.user = User.first
+  pet.user = User.last
   pet.save!
 end
