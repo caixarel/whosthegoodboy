@@ -70,3 +70,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #map
 gem 'geocoder'
 gem 'faker'
+
+
+#renderturbo
+gem 'turbolinks_render'

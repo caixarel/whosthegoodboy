@@ -2,20 +2,76 @@
   justify-content: space-between;
   background: white;
 }
+
+#search-form-control {
+  width: 50%;
+}
+.search-bar {
+  height: calc(2em + 1em + 2px);
+  align-items: center;
+
+  top: 50%;
+
+  padding: 5px;
+}
+
+#idk {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
 .navbar{
   top:-16px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
+.btn-ghost {
+  color: #4A4A4A;
+
+  padding: 8px 24px;
+
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+.btn-menu {
+  color: #d14413;
+  background-color: none;
+  border: 1px solid #d14413;
+  font-size: 15px;
+  padding: 8px 24px;
+  margin-top: 5px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-menu:hover {
+  opacity: 1;
+}
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-brand {
+  padding-left: 15px;
+}
+
 .title-nav{
+  width: 50px;
   a{
-    font-size: 10px;
+    font-size: 13px;
   }
 }
 .search-bar{
@@ -26,22 +82,51 @@
   padding: 10px;
 }
 .sign-up{
-  width: 70px;
-  font-size: 10px;
-  height: 30px;
-  color: white;
+  color: #d14413;
+  background-color: none;
+  //border: 1px solid #d14413;
+  font-size: 15px;
+  padding: 8px 24px;
+  margin-top: 5px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 
 }
+.sign-up:hover {
+  color: #d14413;
+  opacity: 1;
+}
 .log-in{
-  width: 70px;
-  font-size: 10px;
-  height: 30px;
-  color: white;
+  color: #d14413;
+  background-color: none;
+ // border: 1px solid #d14413;
+  font-size: 15px;
+  padding: 8px 24px;
+  margin-top: 5px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.log-in:hover {
+  color: #d14413;
+  opacity: 1;
 }
 #dropdownMenuButton{
-  font-size: 10px;
+  font-size: 13px;
   height: 37px;
 }
 .btn{
   margin-bottom: 5px;
+}
+
+
+.navbar-container{
+  display: flex;
+
+  margin-right: 0;
+  width: 100%;
 }

@@ -33,7 +33,9 @@ body {
 
 }
 
-
+.text-intro {
+  margin-top: 5%;
+}
 
 .login-items  {
   display: flex;
@@ -80,6 +82,7 @@ p a {
   margin: auto;
   display: block;
   justify-content: center;
+  margin-bottom: 5%;
 }
 a {
   text-decoration: none;

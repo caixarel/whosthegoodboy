@@ -9,11 +9,11 @@
           <%end %>
           <div class="d-flex flex-column pl-3">
             <%= pet.name %>
-            <%= link_to 'Edit',edit_pet_path(pet) ,class:'btn btn-primary btn-sm' %>
+            <%= link_to 'Edit',edit_pet_path(pet) ,class:'style-btn-form btn-sm' %>
            <%= link_to "Delete",
                   pet_path(pet),
                   method: :delete,
-                  data: { confirm: "Are you sure?" },class:'btn btn-primary btn-sm' %>
+                  data: { confirm: "Are you sure?" },class:'style-btn-form btn-sm' %>
           </div>
         </div><br>
       <%end %><br>
