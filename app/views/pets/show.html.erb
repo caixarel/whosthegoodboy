@@ -26,9 +26,9 @@
     <div class='shadow bg-white rounded p-3'>
       <h4>Make your offer</h4><br>
       <%= simple_form_for [ @pet, @offer ] do |f| %>
-        <%= f.input :starting_date, as: :date, html5: true%>
-        <%= f.input :end_date, as: :date, html5: true%>
-        <%= f.submit "Submit offer", class: "style-btn-form" %>
+        <%= f.input :starting_date, as: :date, html5: true, input_html: { class: 'text-secondary' }%>
+        <%= f.input :end_date, as: :date, html5: true, input_html: { class: 'text-secondary' }%>
+        <%= f.submit "Submit offer", class: "submit-btn" %>
       <% end %>
     </div>
 
@@ -43,7 +43,7 @@
         <% else %>
         <div>
           <% @pet.reviews.each do |review| %>
-            <h5 class="user"><%= current_user %></h5>
+            <h5 class="user"><%= current_user.email %></h5>
             <p><%= review.comment %></p>
             <p class="pet-review pb-2"><%= review.rating %></p><br>
 
