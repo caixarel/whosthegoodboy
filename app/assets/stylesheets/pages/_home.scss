@@ -20,7 +20,8 @@ body {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  width: 8em
+  width: 8em;
+
 }
 
 .navbar-brand {
@@ -29,6 +30,7 @@ body {
   justify-content: center;
   width: 100%;
   text-decoration: none;
+
 }
 
 
@@ -39,12 +41,28 @@ body {
   align-items: center;
 }
 
+.link {
+  font-size: 18px;
+  justify-content: center;
+  word-break: break-word;
+
+}
+
 
 #title {
-  margin-top: 20%;
+
   font-size: 40px;
 }
 
+p a {
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    text-decoration: none;
+    color:  #d14413;
+  }
+}
 
 .user-devices a {
   text-decoration: none;
@@ -61,6 +79,7 @@ body {
 .home_image {
   margin: auto;
   display: block;
+  justify-content: center;
 }
 a {
   text-decoration: none;

@@ -1,35 +1,37 @@
-<%= link_to 'Make offer',new_pet_offer_path(@pet)%>
 
-<div class="container">
-  <h1><%= @pet.name %> <br></h1>
-  <%if @pet.photo.key %>
-<%= cl_image_tag @pet.photo.key, height: 300, crop: :fill %></div>
-  <%end %>
-<div class="container">
-  <h1><%= @pet.category %></h1>
-  <h2>Description :</h2>
-  <p> <%= @pet.description %> </p>
-</div>
+<div  class='w-50 form'>
+  <div class="container shadow p-3 mb-5 bg-white rounded">
+    <h3 class="text-center"><%= @pet.name %> <br></h3>
+    <%if @pet.photo.key %>
+      <div class= 'd-flex justify-content-center'>
+      <%= cl_image_tag @pet.photo.key, height: 200, crop: :fill %>
+      </div>
 
-<div class="container">
-  <h1><%= @pet.category %> <br></h1>
-</div>
+    <%end %> <br>
+    <div class='shadow bg-white rounded p-3 mb-1'>
+      <h5>Category:</h5> <p><%= @pet.category %></p>
+    </div>
+    <div class='shadow bg-white rounded p-3 mb-1'>
 
-<div class="container">
-  <h1><%= @pet.price_per_hour %> €/H</h1>
-</div>
+       <h5>Description :</h5> <p> <%= @pet.description %> </p>
 
-<div class="container">
-  <h1><%= @avg_rating %> €/H</h1>
-</div>
+    </div>
+    <div class='shadow bg-white rounded p-3 mb-1'>
+      <h5>Price:</h5> <p><%= @pet.price_per_hour %> €/H</p>
+    </div><br><br>
+    <div class='shadow bg-white rounded p-3'>
+      <h5>Make your offer</h5><br>
+      <%= simple_form_for [ @pet, @offer ] do |f| %>
+        <%= f.input :starting_date, as: :date, html5: true%>
+        <%= f.input :end_date, as: :date, html5: true%>
+        <%= f.submit "Submit offer", class: "btn btn-primary" %>
+      <% end %>
+    </div>
 
-<div class="container">
-  <div class="row justify-content-center">
-  </div>
-</div>
-
-
-
+      <%= link_to "go back to all the pets", pets_path ,class:'btn btn-primary'%> <br>
+    </div>
+  </div><br>
+  <div class="container shadow p-3 mb-5 bg-white rounded">
 
 
 
@@ -45,3 +47,4 @@ REVIEWS <br>
     <%= @review.rating %>
     <%= @review.comment %>
   <% end %>
+</div>

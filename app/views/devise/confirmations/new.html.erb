@@ -1,3 +1,5 @@
+<div  class='w-50 form'>
+
 <h2>Resend confirmation instructions</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
@@ -16,5 +18,5 @@
     <%= f.button :submit, "Resend confirmation instructions" %>
   </div>
 <% end %>
-
+</div>
 <%= render "devise/shared/links" %>

@@ -5,31 +5,115 @@
 //   grid-column-gap: 12px;
 //   grid-row-gap: 6px;
 // }
-
+#index-container {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+}
 
 .pet-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
 
-  flex-grow: 1;
 }
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .pet-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .pet-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .pet-cards {
+    grid-template-columns: 1fr ;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .pet-cards {
+    grid-template-columns: 1fr ;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .pet-cards {
+    grid-template-columns: 1fr ;
+  }
+}
+
+
 
 .pet-card {
-  font-size: 20px;
-  font-family: 'Andale Mono';
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.pet-card img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.pet-card h1 {
+  font-size: 16px;
+  font-weight: bold;
 
 }
 
-.name {
-  font-size: 25px;
+.pet-card h3 {
+  font-size: 13px;
+  font-weight: lighter;
+  color: grey;
+
+  margin-bottom: 10px;
+}
+
+.pet-card p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.pet-card .pet-card-infos {
+  padding: 16px;
+}
+
+
+#address {
+  font-style: oblique;
+  font-size: 10px;
+  padding-bottom: 5px;
+}
+
+
+
+#name a:hover {
+
+  color: #d14413;
 }
 
 
 #map {
   height: 100vh;
   position: sticky;
-  top: 0;
+  top: 40px;
+  width: 50vw;
 }

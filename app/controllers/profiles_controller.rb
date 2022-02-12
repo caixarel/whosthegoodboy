@@ -19,4 +19,8 @@ class ProfilesController < ApplicationController
     #authorize @pets
   end
 
+  def my_pets
+    @my_pets = current_user.pets
+  end
+
 end

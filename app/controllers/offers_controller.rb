@@ -15,7 +15,7 @@ class OffersController < ApplicationController
     @offer = Offer.new(offer_params)
     add_offer_parameters
     if @offer.save
-      redirect_to pet_offers_path
+      redirect_to pet_path(@pet)
     else
       render :new
     end
@@ -28,7 +28,7 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
     add_offer_parameters
       if @offer.update(offer_params)
-        redirect_to pet_offers_path(@pet)
+          redirect_to pet_path(@pet)
     else
       render :edit
     end
@@ -36,7 +36,8 @@ class OffersController < ApplicationController
   def destroy
     @offer = Offer.find(params[:id])
     @offer.destroy
-    redirect_to pet_offers_path(@pet)
+    redirect_to pet_path(@pet)
+
   end
 
   def my_offers
