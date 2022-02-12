@@ -19,39 +19,51 @@
     <div class='shadow bg-white rounded p-3 mb-1'>
       <h4>Price:</h4> <p><%= @pet.price_per_hour %> €/H</p>
     </div><br><br>
+
+
+
+
     <div class='shadow bg-white rounded p-3' style="color:#6d6c6c">
       <h4>Make your offer</h4><br>
       <%= simple_form_for [ @pet, @offer ] do |f| %>
         <%= f.input :starting_date, as: :date, html5: true%>
         <%= f.input :end_date, as: :date, html5: true%>
-        <%= f.submit "Submit offer", class: "submit-btn" %>
+        <%= f.submit "Submit offer", class: "style-btn-form" %>
       <% end %>
     </div>
+
+
+
+<br><br>
+    <div class='shadow bg-white rounded p-3' style="color:#6d6c6c">
+     <div class="reviews">
+      <h4><%= pluralize @pet.reviews.size, "review" %></h4><br>
+        <% if @pet.reviews.blank? %>
+    Be the first to leave a review for <%= @pet.name %>
+        <% else %>
+        <div>
+          <% @pet.reviews.each do |review| %>
+            <h5 class="user"><%= current_user %></h5>
+            <p><%= review.comment %></p>
+            <p class="pet-review pb-2"><%= review.rating %></p><br>
+
+          <% end %>
+        </div>
+      <% end %>
+      </div>
+      <br>
+      <div class="leave-a-review">
+      <%= simple_form_for([ @pet, @review ]) do |f| %>
+        <%= f.input :comment, as: :text %>
+        <%= f.input :rating, as: :integer, input_html: {min: 1, max: 5} %>
+        <%= f.button :submit, class: "submit-btn" %>
+      <% end %>
+      </div>
+    </div>
+
+
+
 
       <br><%= link_to "go back to all the pets", pets_path ,class:'go-back-btn'%> <br>
     </div>
   </div><br>
-
-
-
-<h2>
-  <%= pluralize @pet.reviews.size, "review" %>
-</h2>
-
-<div id="reviews">
-  <% if @pet.reviews.blank? %>
-    Be the first to leave a review for <%= @pet.name %>
-  <% else %>
-    <% @pet.reviews.each do |review| %>
-      <p><%= current_user %></p>
-      <p><%= review.comment %></p>
-      <p><%= review.rating %></p>
-    <% end %>
-  <% end %>
-</div>
-
-<%= simple_form_for([ @pet, @review ]) do |f| %>
-  <%= f.input :comment, as: :text %>
-  <%= f.input :rating, as: :integer, input_html: {min: 1, max: 5} %>
-  <%= f.button :submit %>
-<% end %>
