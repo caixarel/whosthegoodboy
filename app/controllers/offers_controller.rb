@@ -64,7 +64,7 @@ class OffersController < ApplicationController
 
   def find_pet
     @pet = Pet.find(params[:pet_id])
-    authorize @pet
+    #authorize @pet
   end
 
   def add_offer_parameters
